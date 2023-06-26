@@ -45,7 +45,7 @@ const Home = () => {
 
                 {/* HOME NEW PREOD */}
 
-                <section className="home-products">
+                <section className="special-products-category">
                     <div className="title-section">
                         NEW ARRIVAL
                     </div>
@@ -227,7 +227,7 @@ const Home = () => {
 
                 {/* HOME BEST SELLER */}
 
-                <section className="home-products">
+                <section className="special-products-category">
                     <div className="title-section">
                         Best Seller
                     </div>
