@@ -5,7 +5,9 @@ import Categories from './screens/Categories';
 
 
 function App() {
-
+  window.addEventListener("offline", () => {
+    alert("No internet!")
+  })
   return (
     <Routes>
       <Route  path="/" element={<Home/>}/>

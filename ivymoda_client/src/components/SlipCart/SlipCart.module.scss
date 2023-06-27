@@ -1,0 +1,64 @@
+@import '../../assets/globalStyle.scss';
+
+.slip-cart {
+  
+    .slip-cart-header {
+      border-bottom: 1px solid #F7F8F9;
+      margin-bottom: 24px;
+    }
+
+    .slip-cart-body {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 0;
+      
+      .slip-cart-list {
+        width: 100%;
+        max-height: 70%;
+
+       
+      }
+
+      .slip-cart-bottom {
+        .slip-cart-total-price {
+            display: flex;
+            gap: 10px;
+            padding: 0 24px;
+            align-items: center;
+            justify-content: flex-end;
+            font-size: 0.875rem;
+            border-bottom:  1px solid #F7F8F9;
+    
+            strong {
+              font-size: 18px;
+            }
+          }
+    
+          .slip-cart-actions {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            padding: 16px 24px 5px 24px;
+    
+            a {
+              font-size: 1rem;
+              font-weight: bold;
+    
+              @include bigRectangleButton();
+              @include lightHover();
+    
+              &.dark {
+                background-color: $dark;
+                color: $light;
+                @include darkHover()
+              }
+    
+              &:nth-child(1) {
+                margin-bottom: 20px;
+              }
+            }
+          }
+      }
+    }
+  }

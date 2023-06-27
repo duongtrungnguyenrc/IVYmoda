@@ -21,4 +21,5 @@ export interface ProductModel {
     salePrice: number;
     inStock: number;
     preserveDetail: string;
+    tag: string
 }

@@ -1,6 +1,4 @@
-import Footer from "../components/Footer";
-import NavBar from "../components/NavBar";
-import Product from "../components/Product";
+import { Footer, Header, Product } from "../components";
 import { ProductModel } from "../models/Model";
 import Pagination from 'react-bootstrap/Pagination';
 
@@ -74,7 +72,7 @@ const demoProduct = `{
     "salePrice" : 1490000,
     "inStock" : 10,
     "preserveDetail": "Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.",
-    "tag": ""
+    "tag": "best seller"
 }`;
 
 const product : ProductModel = JSON.parse(demoProduct);
@@ -88,9 +86,9 @@ for (let index = 0; index < 8; index++) {
 const Categories = () => {
     return (
         <>
-            {/* SITE NAVBAR */}
+            {/* SITE HEADER */}
             
-            <NavBar/>
+            <Header/>
 
             {/* SITE MAIN */}
 
@@ -316,11 +314,11 @@ const Categories = () => {
                             <Pagination.Item>{11}</Pagination.Item>
                             <Pagination.Item active>{12}</Pagination.Item>
                             <Pagination.Item>{13}</Pagination.Item>
-                            <Pagination.Item disabled>{14}</Pagination.Item>
+                            <Pagination.Item>{14}</Pagination.Item>
 
                             <Pagination.Ellipsis />
                             <Pagination.Item>{20}</Pagination.Item>
-                            <Pagination.Next />
+                            <Pagination.Next/>
                             <Pagination.Last />
                         </Pagination>
                     </div>

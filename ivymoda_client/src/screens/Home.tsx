@@ -1,13 +1,92 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart } from "@fortawesome/free-solid-svg-icons";
-import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
-import NavBar from "../components/NavBar"; 
-import Fotter from "../components/Footer";
+import { Header, Footer, Product } from "../components"; 
+import SpecialCategory from "../components/SpecialCategory/SpecialCategory";
+import { ProductModel } from "../models/Model";
+
+const demoProduct = `{
+    "productId" : "1",
+    "type": "ladies",
+    "productGroup" : "Đầm",
+    "productName" : "Đầm xòe lụa dạo phố",
+    "images" : [
+        {
+            "id" : "1",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/ab300ce11d858e326b478a3b685bc89b.JPG"
+        },
+        {
+            "id" : "2",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/0162cda6a67befc746c6fc78be65c8c3.JPG"
+        },
+        {
+            "id" : "3",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/012492361e3bf8db373661c1baa6e332.JPG"
+        },
+        {
+            "id" : "4",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/6666a63c3e81d51c0e4e36a244d6cd9c.JPG"
+        }
+    ],
+    "colorOptions" : [
+        {
+            "id" : 1,
+            "colorName": "Hồng phấn",
+            "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/013.png"
+        },
+        {
+            "id" : 2,
+            "colorName": "Tím lavender",
+            "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/014.png"
+        },
+        {
+            "id" : 3,
+            "colorName": "Xanh lơ",
+            "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/017.png"
+        }
+    ],
+    "sizeOptions" : [
+        {
+            "id" : 1,
+            "size": "S"
+        },
+        {
+            "id" : 2,
+            "size": "M"
+        },
+        {
+            "id" : 3,
+            "size": "L"
+        },
+        {
+            "id" : 4,
+            "size": "XL"
+        },
+        {
+            "id" : 5,
+            "size": "XXL"
+        }
+    ]
+    ,
+    "createdTime" : "2023-06-22T15:34:43.969Z",
+    "rated" : 4,
+    "description" : "Đầm xòe cổ V không tay, phần cầu vai xếp nếp giúp thiết kế thêm mềm mại, nữ tính. Eo chiết bằng chi tiết cạp chun tạo điểm nhấn. Tùng váy xếp nếp tạo độ xòe nhẹ nhàng bay bổng. Khóa kéo ẩn khéo léo sau lưng.",
+    "basePrice" : 10000000,
+    "salePrice" : 1490000,
+    "inStock" : 10,
+    "preserveDetail": "Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.",
+    "tag": "best seller"
+}`;
+
+const product : ProductModel = JSON.parse(demoProduct);
+
+const products : ProductModel[] = [];
+for (let index = 0; index < 8; index++) {
+    products.push(product);
+    
+}
 
 const Home = () => {
     return (
         <>
-            <NavBar/>
+            <Header/>
             <main className="site-main">
                 <section id="slider" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
@@ -45,369 +124,13 @@ const Home = () => {
 
                 {/* HOME NEW PREOD */}
 
-                <section className="special-products-category">
-                    <div className="title-section">
-                        NEW ARRIVAL
-                    </div>
-                    <div className="body-section">
-                        <div className="product-category">
-                            <ul>
-                                <li className="product-category-tab">IVY moda</li>
-                                <li className="product-category-tab active">IVY men</li>
-                                <li className="product-category-tab">IVY kids</li>
-                            </ul>
-                        </div>
-                        <div className="products">
-                            <div className="products-wrapper">
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket best-seller-ticket">Best Seller</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/c576c0d08f772ccab8a4d4a821778479.JPG" alt="" />
-                                            <img className="image hover-image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/cf028222960df82c9ca631d5c04b6bff.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="footer-section">
-                        <div className="view-all-nav">
-                            <a href="">Xem tất cả</a>
-                        </div>
-                    </div>
-                </section>
+                <SpecialCategory/>
 
                 {/* HOME BEST SELLER */}
 
-                <section className="special-products-category">
-                    <div className="title-section">
-                        Best Seller
-                    </div>
-                    <div className="body-section">
-                        <div className="product-category">
-                            <ul>
-                                <li className="product-category-tab">IVY moda</li>
-                                <li className="product-category-tab active">IVY men</li>
-                                <li className="product-category-tab">IVY kids</li>
-                            </ul>
-                        </div>
-                        <div className="products">
-                            <div className="products-wrapper">
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket best-seller-ticket">Best Seller</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/c576c0d08f772ccab8a4d4a821778479.JPG" alt="" />
-                                            <img className="image hover-image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/cf028222960df82c9ca631d5c04b6bff.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                                <div className="product">
-                                    <div className="info-ticket new-ticket">NEW</div>
-                                        <div className="images">
-                                            <a href="">
-                                            <img className="image" src="https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/afd3afc08a14980041b96902a949a98a.JPG" alt="" />
-                                            <img className="image hover-image" src="	https://pubcdn.ivymoda.com/files/product/thumab/400/2023/06/16/ac88fbf3d6fe5243924be0b374d3f3e5.JPG" alt="" />
-                                            </a>
-                                        </div>
-                                        <div className="product-info">
-                                            <div className="color-list">
-                                                <ul>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/001.png" alt="" /></li>
-                                                    <li className="color-option checked"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/002.png" alt="" /></li>
-                                                    <li className="color-option"><img src="https://pubcdn.ivymoda.com/ivy2/images/color/049.png" alt="" /></li>
-                                                </ul>
-                                                <div className="favourite">
-                                                    <FontAwesomeIcon icon={faHeart}/>
-                                                </div>
-                                            </div>
-                                            <div className="product-name"><a href="">Anthea Dress - Đầm dạ hội</a></div>
-                                            <div className="product-price">
-                                                <div className="price">2.9990.000đ</div>
-                                                <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
-                                            </div>
-                                        </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="footer-section">
-                        <div className="view-all-nav">
-                            <a href="">Xem tất cả</a>
-                        </div>
-                    </div>
-                </section>
+                <SpecialCategory/>
             </main>
-            <Fotter/>
+            <Footer/>
         </>
     )
 }
