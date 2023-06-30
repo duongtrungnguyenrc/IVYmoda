@@ -4,10 +4,12 @@ import { faMagnifyingGlass, faHeadphones, faUser, faBagShopping } from '@fortawe
 
 import styles from './header.module.scss';
 import SlipCart from '../SlipCart';
+import { memo } from 'react';
 
 const cx = classNames.bind(styles);
 
 const Header = () => {
+    
     return (
         <>
             <nav className={cx("header")}>
@@ -557,4 +559,4 @@ const Header = () => {
     )
 }
 
-export default Header;
+export default memo(Header);

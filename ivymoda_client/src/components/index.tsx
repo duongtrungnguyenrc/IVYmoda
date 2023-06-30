@@ -1,3 +1,9 @@
 export { default as  Header } from  "./Header";
 export { default as Footer } from "./Footer";
-export { default as  Product } from  "./Product/Product.tsx";
+export { default as  Product } from  "./Product";
+export { default as Slider } from "./Slider";
+export { default as Content } from "./Content";
+export { default as NavLinks } from "./NavLinks";
+export { default as ProductsFilter } from "./ProductsFilter";
+export { default as ProductGallery } from "./ProductGallery";
+export { default as ProductDetail } from "./ProductDetail";

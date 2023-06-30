@@ -66,17 +66,20 @@
           position: absolute;
           background-color: $light;
           border: 1px solid $light-grey;
+          border-radius: 8px 0px;
 
           &.minus {
-            border-radius: 8px 0px;
             left: 0;
             transform: translate(-50%, 0%)
           }
 
           &.plus {
-            border-radius: 0px 8px;
             right: 0;
             transform: translate(50%, 0%);
+          }
+
+          &:hover {
+            @include lightHover();
           }
         }
       }

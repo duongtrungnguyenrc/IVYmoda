@@ -42,11 +42,11 @@ $dark-grey: #707070;
 
 @mixin responsive($break-point, $start-point: null) {
   @if $start-point {
-    @media screen and (min-width: $start-point) and (max-width: $break-point) {
+    @media only screen and (min-width: $start-point) and (max-width: $break-point) {
       @content;
     }
   } @else {
-    @media screen and (max-width: $break-point) {
+    @media only screen and (max-width: $break-point) {
       @content;
     }
   }
@@ -92,7 +92,7 @@ $dark-grey: #707070;
 *
 {
   box-sizing: border-box;
-  transition: 0.5s;
+  // transition: 0.5s;
   font-family: 'Montserrat', sans-serif;
   text-rendering: optimizeSpeed;
 }
@@ -109,7 +109,7 @@ html {
   }
 
   @include responsive(1400px) {
-    font-size: 10px;
+    font-size: 11px;
   }
 }
   

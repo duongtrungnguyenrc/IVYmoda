@@ -10,10 +10,12 @@
       font-weight: 600;
       letter-spacing: 0.125rem;
       margin-bottom: 20px;
+      text-transform: uppercase;
     }
 
     .body-section {
       margin-bottom: 30px;
+      min-height: 32rem;
 
       .product-category {
         @include centerContent();
@@ -29,6 +31,7 @@
             cursor: pointer;
 
             &.active {
+              color: $dark;
               border-bottom: 2px solid $dark;
             }
           }

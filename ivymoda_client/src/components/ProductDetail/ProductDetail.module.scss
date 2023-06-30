@@ -1,0 +1,161 @@
+@import "../../assets/globalStyle.scss";
+
+.product-details {
+    padding: 0 1rem 0 8.5rem;
+    width: 50%;
+
+    h1 {
+        font-weight: 600;
+        font-size: 30px;
+        line-height: 32px;
+    }
+
+    .product-detail {
+        width: 100%;
+        display: flex;
+        align-items: center;
+        margin-top: 24px;
+        color: #6c6d70;
+
+        &.detail-sub-info {
+            gap: 2rem;
+
+            .customer-rated {
+                display: flex;
+                gap: 1rem;
+
+                .rated-stars {
+                    svg {
+                        font-size: 1.1rem;
+                        fill: #eeb256;
+                    }
+                }
+
+                span {
+                    font-size: 16px;
+                }
+            }
+
+        }
+
+        &.price-detail{
+            
+            p {
+                font-weight: 600;
+                font-size: 24px;
+                line-height: 32px;
+                color: $dark;
+            }
+        }
+
+        &.color-detail {
+            flex-direction: column;
+            align-items: start;
+
+            p {
+                font-weight: 600;
+                font-size: 20px;
+                line-height: 32px;
+                color: $dark;
+            }
+
+            .color-options {
+                display: flex;
+                gap: 0.8rem;
+                margin-top: 10px;
+
+                .color-option {
+                    position: relative;
+
+                    input {
+                        display: none;
+
+                        &:checked ~ span::before {
+                            content: "";
+                            left: 8px;
+                            top: 4px;
+                            width: 5px;
+                            height: 9px;
+                            border: solid #FFF;
+                            border-width: 0 1px 1px 0;
+                            -webkit-transform: rotate(45deg);
+                            -ms-transform: rotate(45deg);
+                            transform: rotate(45deg);
+                            display: block;
+                            position: absolute;
+                        }
+                    }
+
+                    span {
+                        width: 20px;
+                        height: 20px;
+                        display: flex;
+                        border-radius: 50%;
+                        overflow: hidden;
+                        cursor: pointer;
+
+                        img {
+                            width: 100%;
+                            height: 100%;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+
+        &.size-detail {
+            flex-direction: column;
+            align-items: start;
+
+            .size-options {
+                display: flex;
+                gap: 10px;
+                .size-option {
+                    cursor: pointer;
+
+                    input {
+                        display: none;
+
+                        &:checked ~ span {
+                            border-color: $dark;
+                            color: $dark
+                        }
+                    }
+
+                    span {
+                        @include centerContent();
+                        width: 3rem;
+                        height: 2rem;
+                        border: 1px solid $light-grey;
+                        color: $dark-grey;
+                    }
+                }
+            }
+
+            a {
+                font-size: 0.7rem;
+                color: $dark-grey;
+                margin-top: 8px;
+
+                &:hover {
+                    color: $navbar-text-color;
+                    svg {
+                        fill: $navbar-text-color;
+                    }
+                }
+
+                svg {
+                    fill: $dark-grey;
+                    margin-right: 7px;
+                }
+            }
+        }
+        
+        p {
+            margin: 0;
+            font-size: 16px;
+        }
+    }
+
+}

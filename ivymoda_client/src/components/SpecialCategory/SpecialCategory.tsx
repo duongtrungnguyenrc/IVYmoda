@@ -3,111 +3,61 @@ import classnames from "classnames/bind";
 
 import { ProductModel } from "../../models/Model";
 import Product from "../Product/Product";
+import { memo, useCallback, useEffect, useState } from "react";
+import axios from "../../services/CustomAxios";
 
 
 const cx = classnames.bind(styles);
 
-
-const demoProduct = `{
-    "productId" : "1",
-    "type": "ladies",
-    "productGroup" : "Đầm",
-    "productName" : "Đầm xòe lụa dạo phố",
-    "images" : [
-        {
-            "id" : "1",
-            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/ab300ce11d858e326b478a3b685bc89b.JPG"
-        },
-        {
-            "id" : "2",
-            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/0162cda6a67befc746c6fc78be65c8c3.JPG"
-        },
-        {
-            "id" : "3",
-            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/012492361e3bf8db373661c1baa6e332.JPG"
-        },
-        {
-            "id" : "4",
-            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/6666a63c3e81d51c0e4e36a244d6cd9c.JPG"
-        }
-    ],
-    "colorOptions" : [
-        {
-            "id" : 1,
-            "colorName": "Hồng phấn",
-            "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/013.png"
-        },
-        {
-            "id" : 2,
-            "colorName": "Tím lavender",
-            "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/014.png"
-        },
-        {
-            "id" : 3,
-            "colorName": "Xanh lơ",
-            "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/017.png"
-        }
-    ],
-    "sizeOptions" : [
-        {
-            "id" : 1,
-            "size": "S"
-        },
-        {
-            "id" : 2,
-            "size": "M"
-        },
-        {
-            "id" : 3,
-            "size": "L"
-        },
-        {
-            "id" : 4,
-            "size": "XL"
-        },
-        {
-            "id" : 5,
-            "size": "XXL"
-        }
-    ]
-    ,
-    "createdTime" : "2023-06-22T15:34:43.969Z",
-    "rated" : 4,
-    "description" : "Đầm xòe cổ V không tay, phần cầu vai xếp nếp giúp thiết kế thêm mềm mại, nữ tính. Eo chiết bằng chi tiết cạp chun tạo điểm nhấn. Tùng váy xếp nếp tạo độ xòe nhẹ nhàng bay bổng. Khóa kéo ẩn khéo léo sau lưng.",
-    "basePrice" : 10000000,
-    "salePrice" : 1490000,
-    "inStock" : 10,
-    "preserveDetail": "Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.",
-    "tag": "best seller"
-}`;
-
-const product : ProductModel = JSON.parse(demoProduct);
-
-const products : ProductModel[] = [];
-for (let index = 0; index < 8; index++) {
-    products.push(product);
-    
+interface responseModel {
+    type : string,
+    data : ProductModel[]
 }
 
-function SpecialCategory() {
+function SpecialCategory({ title, apiKey } : { title : string, apiKey : string}) {
+    const [activeCategoryTab, setActiveCategoryTab] = useState(0);
+    const [specialProducts, setSpecialProducts] = useState<responseModel[]>([]);
+
+    useEffect(() => {   
+       fetchData();
+    }, [])
+
+    const fetchData = useCallback(async () => {
+        const respond = await axios.get(`${apiKey}`);
+            if(respond.data) {
+                setSpecialProducts(respond.data);
+            }
+    }, []);
+    console.log("render");
     return ( 
         <section className={cx("special-products-category")}>
             <div className={cx("title-section")}>
-                NEW ARRIVAL
+                {title}
             </div>
             <div className={cx("body-section")}>
                 <div className={cx("product-category")}>
                     <ul>
-                        <li className={cx("product-category-tab")}>IVY moda</li>
-                        <li className={cx("product-category-tab", "active")}>IVY men</li>
-                        <li className={cx("product-category-tab")}>IVY kids</li>
+                        {
+                            specialProducts && specialProducts.map((value, index) => {
+                                return <li 
+                                        key={index} 
+                                        className = {cx("product-category-tab", { 
+                                                            "active" : index === activeCategoryTab
+                                                        })
+                                                    }
+                                        onClick={() => setActiveCategoryTab(index)}
+                                        >
+                                            {value.type}
+                                        </li>
+                            })
+                        }
                     </ul>
                 </div>
                 <div className={cx("products")}>
                     <div className={cx("products-wrapper")}>
                         {
-                            products && products.map((value) => {
-                                return <Product product={value}/>
+                            specialProducts && specialProducts.length > 0 && specialProducts[activeCategoryTab].data.map((value, index) => {
+                                return <Product key={index} product={value}/>
                             })
                         }
                     </div>
@@ -122,4 +72,4 @@ function SpecialCategory() {
      );
 }
 
-export default SpecialCategory;
+export default memo(SpecialCategory);

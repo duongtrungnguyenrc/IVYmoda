@@ -28,7 +28,7 @@ const SlipCart = () => {
                         <strong>1.0001.000đ</strong>
                     </div>
                     <div className={cx("slip-cart-actions")}>
-                        <a className="dark" href="">XEM GIỎ HÀNG</a>
+                        <a className={cx("dark")} href="">ĐĂNG NHẬP</a>
                         <a href="">XEM GIỎ HÀNG</a>
                     </div>
                 </div>

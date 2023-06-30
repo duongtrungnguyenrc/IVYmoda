@@ -1,74 +1,346 @@
 [
     {
-        "productId" : "1",
-        "type": "ladies",
-        "productGroup" : "Đầm",
-        "productName" : "Đầm xòe lụa dạo phố",
-        "images" : [
+      "productId": "1",
+      "type": "ladies",
+      "productGroup": "Đầm",
+      "productName": "Đầm xòe lụa dạo phố",
+      "images": [
+        {
+          "id": "1",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/ab300ce11d858e326b478a3b685bc89b.JPG"
+        },
+        {
+          "id": "2",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/0162cda6a67befc746c6fc78be65c8c3.JPG"
+        },
+        {
+          "id": "3",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/012492361e3bf8db373661c1baa6e332.JPG"
+        },
+        {
+          "id": "4",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/6666a63c3e81d51c0e4e36a244d6cd9c.JPG"
+        }
+      ],
+      "colorOptions": [
+        {
+          "id": 1,
+          "colorName": "Hồng phấn",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/013.png"
+        },
+        {
+          "id": 2,
+          "colorName": "Tím lavender",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/014.png"
+        },
+        {
+          "id": 3,
+          "colorName": "Xanh lơ",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/017.png"
+        }
+      ],
+      "sizeOptions": [
+        {
+          "id": 1,
+          "size": "S"
+        },
+        {
+          "id": 2,
+          "size": "M"
+        },
+        {
+          "id": 3,
+          "size": "L"
+        },
+        {
+          "id": 4,
+          "size": "XL"
+        },
+        {
+          "id": 5,
+          "size": "XXL"
+        }
+      ],
+      "createdTime": "2023-06-22T15:34:43.969Z",
+      "rated": 4,
+      "description": "Đầm xòe cổ V không tay, phần cầu vai xếp nếp giúp thiết kế thêm mềm mại, nữ tính. Eo chiết bằng chi tiết cạp chun tạo điểm nhấn. Tùng váy xếp nếp tạo độ xòe nhẹ nhàng bay bổng. Khóa kéo ẩn khéo léo sau lưng.",
+      "basePrice": 10000000,
+      "salePrice": 1490000,
+      "inStock": 10,
+      "preserveDetail": "Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.",
+      "tag": ""
+    },
+    {
+      "productId": "2",
+      "type": "ladies",
+      "productGroup": "Quần",
+      "productName": "Quần short nữ kaki",
+      "images": [
+        {
+          "id": "1",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/01/2d7d0d4c8f6a35e6f3a0c7d7d2c8d5ff.JPG"
+        },
+        {
+          "id": "2",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/01/19d1cdd2a8c9d3b8d02f823fda5c8e5e.JPG"
+        },
+        {
+          "id": "3",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/16/4d93e9dd594b1b4a3e87bc84b9b1d8d2.JPG"
+        },
+        {
+          "id": "4",
+          "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/16/8c5baa6f7f4ed0c2a2c3d9a86e3a9c04.JPG"
+        }
+      ],
+      "colorOptions": [
+        {
+          "id": 1,
+          "colorName": "Xanh caro",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/002.png"
+        },
+        {
+          "id": 2,
+          "colorName": "Đỏ caro",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/003.png"
+        },
+        {
+          "id": 3,
+          "colorName": "Xám caro",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/011.png"
+        }
+      ],
+      "sizeOptions": [
+        {
+          "id": 1,
+          "size": "S"
+        },
+        {
+          "id": 2,
+          "size": "M"
+        },
+        {
+          "id": 3,
+          "size": "L"
+        },
+        {
+          "id": 4,
+          "size": "XL"
+        },
+        {
+          "id": 5,
+          "size": "XXL"
+        }
+      ],
+      "createdTime": "2023-06-16T08:55:43.969Z",
+      "rated": 5,
+      "description": "Áo sơ mi tay ngắn kiểu dáng slimfit, chất liệu vải cotton co giãn, thoáng mát, thấm hút mồ hôi tốt. Họa tiết caro trẻ trung, năng động. Phù hợp với nhiều phong cách mix đồ, dễ dàng kết hợp với quần jeans, quần âu, khaki, short…",
+      "basePrice": 1500000,
+      "salePrice": 990000,
+      "inStock": 20,
+      "preserveDetail": "",
+      "tag": "new"
+    },
+    {
+      "productId": "3",
+      "type": "men",
+      "productGroup": "Áo sơ mi",
+      "productName": "Áo sơ mi nam tay ngắn caro",
+      "images": [
             {
-                "id" : "1",
-                "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/ab300ce11d858e326b478a3b685bc89b.JPG"
+            "id": "1",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/16/8e39a0ce9c0a3ca4b1dc68f8c4f6dc9a.JPG"
             },
             {
-                "id" : "2",
-                "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/0162cda6a67befc746c6fc78be65c8c3.JPG"
+            "id": "2",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/16/0a03b4f49f1a1a3b4cbbd2c9e5e6d33f.JPG"
             },
             {
-                "id" : "3",
-                "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/012492361e3bf8db373661c1baa6e332.JPG"
+            "id": "3",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/16/4d93e9dd594b1b4a3e87bc84b9b1d8d2.JPG"
             },
             {
-                "id" : "4",
-                "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/09/6666a63c3e81d51c0e4e36a244d6cd9c.JPG"
+            "id": "4",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/16/8c5baa6f7f4ed0c2a2c3d9a86e3a9c04.JPG"
+            }   
+        ] ,
+      "colorOptions": [
+        {
+          "id": 1,
+          "colorName": "Xanh caro",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/002.png"
+        },
+        {
+          "id": 2,
+          "colorName": "Đỏ caro",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/003.png"
+        },
+        {
+          "id": 3,
+          "colorName": "Xám caro",
+          "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/011.png"
+        }
+      ],
+      "sizeOptions": [
+        {
+          "id": 1,
+          "size": "S"
+        },
+        {
+          "id": 2,
+          "size": "M"
+        },
+        {
+          "id": 3,
+          "size": "L"
+        },
+        {
+          "id": 4,
+          "size": "XL"
+        },
+        {
+          "id": 5,
+          "size": "XXL"
+        }
+      ],
+      "createdTime": "2023-06-16T08:55:43.969Z",
+      "rated": 5,
+      "description": "Áo sơ mi tay ngắn kiểu dáng slimfit, chất liệu vải cotton co giãn, thoáng mát, thấm hút mồ hôi tốt. Họa tiết caro trẻ trung, năng động. Phù hợp với nhiều phong cách mix đồ, dễ dàng kết hợp với quần jeans, quần âu, khaki, short…",
+      "basePrice": 1500000,
+      "salePrice": 990000,
+      "inStock": 20,
+      "preserveDetail": "",
+      "tag": "new"
+    },
+    {
+      "productId": "4",
+      "type": "accessories",
+      "productGroup": "Mắt kính",
+      "productName": "Mắt kính mát nam nữ",
+      "images": [
+            {
+            "id": "1",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/20/f4a3817e0f8e8d5b1d3f4c7671c11278.JPG"
+            },
+            {
+            "id": "2",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/20/2cb1b0bef5e2f35e1b4c6d8af8c9f92c.JPG"
+            },
+            {
+            "id": "3",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/20/8a9ab07e41d4f9c5b7a0b4bde7f8d7ff.JPG"
+            },
+            {
+            "id": "4",
+            "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/20/259d2b6ef5e5d4e2dcefcb0e3b1c3c5c.JPG"
             }
+            ],
+        "colorOptions": [
+            {
+                "id": 1,
+                "colorName": "Đen",
+                "colorLink": ""
+            },
+            {
+                "id": 2,
+                "colorName": "Nâu",
+                "colorLink": ""
+            },
+        {
+            "id": 3,
+            "colorName": "Xanh dương",
+            "colorLink": ""
+        },
+        {
+            "id": 4,
+            "colorName": "Xám",
+            "colorLink": ""
+        }
         ],
-        "colorOptions" : [
-            {
-                "id" : 1,
-                "colorName": "Hồng phấn",
-                "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/013.png"
-            },
-            {
-                "id" : 2,
-                "colorName": "Tím lavender",
-                "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/014.png"
-            },
-            {
-                "id" : 3,
-                "colorName": "Xanh lơ",
-                "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/017.png"
-            }
+            "sizeOptions": [
+        {
+            "id": 1,
+            "size": "onesize"
+        }
         ],
-        "sizeOptions" : [
-            {
-                "id" : 1,
-                "size": "S"
-            },
-            {
-                "id" : 2,
-                "size": "M"
-            },
-            {
-                "id" : 3,
-                "size": "L"
-            },
-            {
-                "id" : 4,
-                "size": "XL"
-            },
-            {
-                "id" : 5,
-                "size": "XXL"
-            }
-        ]
-        ,
-        "createdTime" : "2023-06-22T15:34:43.969Z",
-        "rated" : 4,
-        "description" : "Đầm xòe cổ V không tay, phần cầu vai xếp nếp giúp thiết kế thêm mềm mại, nữ tính. Eo chiết bằng chi tiết cạp chun tạo điểm nhấn. Tùng váy xếp nếp tạo độ xòe nhẹ nhàng bay bổng. Khóa kéo ẩn khéo léo sau lưng.",
-        "basePrice" : 10000000,
-        "salePrice" : 1490000,
-        "inStock" : 10,
-        "preserveDetail": "Các sản phẩm thuộc dòng cao cấp (Senora) và áo khoác (dạ, tweed, lông, phao) chỉ giặt khô, tuyệt đối không giặt ướt.",
-        "tag": ""
-    }
+        "createdTime": "2023-06-20T10:20:43.969Z",
+        "rated": 4,
+        "description": "Mắt kính mát nam nữ, thiết kế tròng kính tròn phù hợp với nhiều kiểu mặt. Gọng kính bằng kim loại cao cấp, màu sắc trang nhã, sang trọng. Tròng kính chống tia UV400, bảo vệ mắt hiệu quả. Phù hợp với nhiều phong cách thời trang.",
+        "basePrice": 700000,
+        "salePrice": 490000,
+        "inStock": 30,
+        "preserveDetail": "",
+        "tag": "new"
+    },
+    {
+        "productId": "5",
+        "type": "men",
+        "productGroup": "Quần",
+        "productName": "Quần tây nam",
+        "images": [
+        {
+        "id": "1",
+        "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/12/8b29b4f0aef0c5e4c49a8e8d63ab01d2.JPG"
+        },
+        {
+        "id": "2",
+        "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/12/7d78f3c1b5dce9d1c7fd2d1bb5f36fb3.JPG"
+        },
+        {
+        "id": "3",
+        "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/12/2769e28c1f0c1b9f7f7324f63dbf2a4f.JPG"
+        },
+        {
+        "id": "4",
+        "imgLink": "https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/06/12/fa7c7e14a1a5d5a8f7b6e70a1d15d167.JPG"
+        }
+        ],
+        "colorOptions": [
+        {
+        "id": 1,
+        "colorName": "Xám đen",
+        "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/010.png"
+        },
+        {
+        "id": 2,
+        "colorName": "Nâu đen",
+        "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/006.png"
+        },
+        {
+        "id": 3,
+        "colorName": "Xanh đen",
+        "colorLink": "https://pubcdn.ivymoda.com/ivy2/images/color/016.png"
+        }
+        ],
+        "sizeOptions": [
+        {
+        "id": 1,
+        "size": "S"
+        },
+        {
+        "id": 2,
+        "size": "M"
+        },
+        {
+        "id": 3,
+        "size": "L"
+        },
+        {
+        "id": 4,
+        "size": "XL"
+        },
+        {
+        "id": 5,
+        "size": "XXL"
+        }
+        ],
+        "createdTime": "2023-06-12T09:21:43.969Z",
+        "rated": 4.5,
+        "description": "Quần tây nam, kiểu dáng Slimfit,chất liệu vải cao cấp, mềm mại, thoáng mát và co giãn tốt. Thiết kế phối hai túi bên và hai túi sau, tạo nên vẻ thanh lịch, trang nhã và phù hợp với nhiều phong cách thời trang. Chất liệu vải chống nhăn, chống bám bụi, dễ dàng giặt là và là ủi. Sản phẩm có nhiều size và màu sắc để lựa chọn.",
+        "basePrice": 1200000,
+        "salePrice": 960000,
+        "inStock": 20,
+        "preserveDetail": "",
+        "tag": "sale"
+        }
 ]

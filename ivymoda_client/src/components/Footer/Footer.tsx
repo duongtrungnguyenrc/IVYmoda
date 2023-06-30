@@ -1,5 +1,6 @@
 import classNames from 'classnames/bind';
 import styles from './Footer.module.scss';
+import { memo } from 'react';
 
 const cx = classNames.bind(styles);
 
@@ -74,7 +75,7 @@ const Footer = () => {
                         </div>
                         <div className={cx("bottom-right")}>
                             <div className={cx("register-form")}>
-                                <h3>Nhận thông tin các <br/>chương trình của IVY <br/>moda</h3>
+                                <h3>Nhận thông tin các chương trình của IVY moda</h3>
                                 <form method="post" action="">
                                     <input type="text" placeholder="Nhập địa chỉ email"/>
                                     <button type="submit">Đăng kí</button>
@@ -105,4 +106,4 @@ const Footer = () => {
     )
 }
 
-export default Footer;
+export default memo(Footer);
