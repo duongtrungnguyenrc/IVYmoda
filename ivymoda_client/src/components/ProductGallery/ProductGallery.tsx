@@ -11,24 +11,8 @@ interface coordinatesModel {
   y: number;
 }
 
-function MainGalleryImage({ isHover, mouseCoordinates, galleryFrameRef }: { isHover: boolean, mouseCoordinates: coordinatesModel, galleryFrameRef: React.RefObject<HTMLDivElement> }) {
-    const style = {
-        backgroundImage: `url(https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/05/26/13a3f6fc5511638de816015d7a23dc3e.jpg)`,
-        transform : isHover ? "scale(2)" : "scale(1)", 
-        transformOrigin: galleryFrameRef.current ? `${mouseCoordinates.x / galleryFrameRef.current.clientWidth * 100}% ${mouseCoordinates.y / galleryFrameRef.current.clientHeight * 100}%` : undefined
-    };
+function MainGalleryImage() {
 
-    return (
-        <div 
-            className={cx("main-gallery-image")} 
-            style={style}
-        />
-    );
-};
-
-const MemoizedMainGalleryImage = memo(MainGalleryImage);
-
-function ProductGallery() {
     const [ isHover, setIsHover ] = useState(false);
     const [mouseCoordinates, setMouseCoordinates] = useState<coordinatesModel>({
         x: 0,
@@ -43,13 +27,28 @@ function ProductGallery() {
             y: event.clientY - galleryFrameRef.current.offsetTop,
         });
         setIsHover(true);
-    }, []);    
+    }, []);  
+
+    const style = {
+        backgroundImage: `url(https://pubcdn.ivymoda.com/files/product/thumab/1600/2023/05/26/13a3f6fc5511638de816015d7a23dc3e.jpg)`,
+        transform : isHover ? "scale(2)" : "scale(1)", 
+        transformOrigin: galleryFrameRef.current ? `${mouseCoordinates.x / galleryFrameRef.current.clientWidth * 100}% ${mouseCoordinates.y / galleryFrameRef.current.clientHeight * 100}%` : undefined
+    };
+
+    return (
+        <div ref={galleryFrameRef} className={cx("main-gallery-frame")} onMouseMove={handleMouseMove} onMouseLeave={() => setIsHover(false)}>
+            <div className={cx("main-gallery-image")} style={style}/>
+        </div>
+    );
+};
+
+const MemoizedMainGalleryImage = memo(MainGalleryImage);
+
+function ProductGallery() {
 
     return (
         <div className={cx("product-gallery")}>
-            <div ref={galleryFrameRef} className={cx("main-gallery-frame")} onMouseMove={handleMouseMove} onMouseLeave={() => setIsHover(false)}>
-                <MemoizedMainGalleryImage isHover={isHover} mouseCoordinates={mouseCoordinates} galleryFrameRef={galleryFrameRef} />
-            </div>
+            <MemoizedMainGalleryImage/>
             <div className={cx("side-gallery-frame")}>
                 <button>
                     <ChevronUpIcon/>
@@ -79,4 +78,4 @@ function ProductGallery() {
     );
 }
 
-export default ProductGallery;
+export default memo(ProductGallery);

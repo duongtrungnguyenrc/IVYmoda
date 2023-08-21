@@ -1,9 +1,9 @@
-import styles from "./SpecialCategory.module.scss";
+import { memo, useCallback, useEffect, useState } from "react";
 import classnames from "classnames/bind";
 
+import styles from "./SpecialCategory.module.scss";
 import { ProductModel } from "../../models/Model";
 import Product from "../Product/Product";
-import { memo, useCallback, useEffect, useState } from "react";
 import axios from "../../services/CustomAxios";
 
 
@@ -28,7 +28,7 @@ function SpecialCategory({ title, apiKey } : { title : string, apiKey : string})
                 setSpecialProducts(respond.data);
             }
     }, []);
-    console.log("render");
+
     return ( 
         <section className={cx("special-products-category")}>
             <div className={cx("title-section")}>
@@ -38,17 +38,17 @@ function SpecialCategory({ title, apiKey } : { title : string, apiKey : string})
                 <div className={cx("product-category")}>
                     <ul>
                         {
-                            specialProducts && specialProducts.map((value, index) => {
+                            specialProducts?.map((value, index) => {
                                 return <li 
-                                        key={index} 
-                                        className = {cx("product-category-tab", { 
-                                                            "active" : index === activeCategoryTab
-                                                        })
-                                                    }
-                                        onClick={() => setActiveCategoryTab(index)}
-                                        >
-                                            {value.type}
-                                        </li>
+                                    key={index} 
+                                    className = {cx("product-category-tab", { 
+                                                        "active" : index === activeCategoryTab
+                                                    })
+                                                }
+                                    onClick={() => setActiveCategoryTab(index)}
+                                    >
+                                        {value.type}
+                                    </li>
                             })
                         }
                     </ul>

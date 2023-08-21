@@ -1,4 +1,4 @@
-@import '../../assets/globalStyle.scss';
+@import '../../assets/GeneralDefine.scss';
 
 .slip-cart {
   
@@ -17,7 +17,98 @@
         width: 100%;
         max-height: 70%;
 
-       
+        .slip-cart-item {
+          display: flex;
+          padding: 0 24px 12px 24px;
+          gap: 12px;
+          border-bottom: 1px solid #F6F7F8;
+      
+          img {
+            width: 64px;
+            height: 100%;
+          }
+      
+          .info {
+            max-width: 80%;
+            width: 80%;
+      
+            & > * , & > * a{
+              font-weight: 400;
+          
+            }
+      
+            h3{
+              a {font-size: 1rem;}
+            }
+          }
+      
+          .properties {
+            display: flex;
+            gap: 20px;
+      
+            p {
+              font-size: 0.875rem;
+            }
+          }
+      
+          .price-group {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+      
+            .quantity-group {
+              width: max-content;
+              position: relative;
+              display: flex;
+              justify-content: space-between;
+              margin-left: 12px;
+      
+              input {
+                width: 48px;
+                height: 24px;
+                border: 1px solid $light-grey;
+                padding: 0 20px;
+      
+                &::placeholder {
+                  font-size: 0.75rem;
+                }
+              }
+      
+              button {
+                @include centerContent();
+      
+                height: 24px;
+                width: 24px;
+                font-size: 0.625rem;
+                position: absolute;
+                background-color: $light;
+                border: 1px solid $light-grey;
+                border-radius: 8px 0px;
+      
+                &.minus {
+                  left: 0;
+                  transform: translate(-50%, 0%)
+                }
+      
+                &.plus {
+                  right: 0;
+                  transform: translate(50%, 0%);
+                }
+      
+                &:hover {
+                  @include lightHover();
+                }
+              }
+            }
+      
+            .price {
+              font-size: 0.875rem;
+              font-weight: bold;
+              color: #AC2F33;
+              margin: 0;
+            }
+          }
+        }
       }
 
       .slip-cart-bottom {
@@ -48,14 +139,12 @@
               @include bigRectangleButton();
               @include lightHover();
     
-              &.dark {
+              
+              &:nth-child(1) {
+                margin-bottom: 20px;
                 background-color: $dark;
                 color: $light;
                 @include darkHover()
-              }
-    
-              &:nth-child(1) {
-                margin-bottom: 20px;
               }
             }
           }

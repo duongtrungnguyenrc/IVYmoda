@@ -1,4 +1,4 @@
-@import "../../assets/globalStyle.scss";
+@import '../../assets/GeneralDefine.scss';
 
 .product {
     width: 20%;
@@ -128,10 +128,16 @@
         a {
           width: max-content;
           height: max-content;
-          padding: 5px 10px;
+          padding: 10px 10px;
           background-color: $dark;
           color: $light;
           border-radius: 8px 0;
+          @include centerContent();
+
+          svg {
+            font-size: 1rem;
+            fill: $light;
+          }
         }
       }
     }

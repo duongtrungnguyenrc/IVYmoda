@@ -5,10 +5,9 @@ GET http://localhost:3000/product
 POST http://localhost:3000/items
 
 content-type: application/json
-body:
-{
+body: {
     "page": 1, 
     "quantityPerPage" : 3,
     "type" : "ladies", 
     "productGroup" : "Đầm"
-}
+    }

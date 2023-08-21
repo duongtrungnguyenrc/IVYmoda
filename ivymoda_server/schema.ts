@@ -13,3 +13,11 @@ export const productSchema = new Schema({
     inStock: Number,
     preserveDetail: String,
 });
+
+export const UserSchema = new Schema({
+    email: String,
+    fullName: String,
+    password: String,
+    phone: String,
+    address: String
+})

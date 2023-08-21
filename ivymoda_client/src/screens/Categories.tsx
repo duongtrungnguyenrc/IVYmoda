@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import { Footer, Header, NavLinks, Product, Content, ProductsFilter } from "../components";
 import Pagination from 'react-bootstrap/Pagination';
 import axios from "../services/CustomAxios";
@@ -23,7 +23,7 @@ const Categories = () => {
 
 
     const fetchData = useCallback( async () => {
-        const response = await axios.post("items", {page: currentPage, quantityPerPage : 3, type : "ladies", productGroup : "Đầm"});
+        const response = await axios.post("items", {page: currentPage, quantityPerPage : 20, type : "ladies", productGroup : "Đầm"});
         setResponseData(response.data);
         if(isFirstRender) {                        
             handleDisplayedPage(response.data.totalPages);

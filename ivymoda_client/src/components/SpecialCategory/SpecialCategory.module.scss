@@ -1,11 +1,11 @@
-@import "../../assets/globalStyle.scss";
+@import '../../assets/GeneralDefine.scss';
 
 .special-products-category {
     margin-bottom: 50px;
 
     .title-section {
       text-align: center;
-      font-size: 1.9rem;
+      font-size: 2.1rem;
       line-height: 32px;
       font-weight: 600;
       letter-spacing: 0.125rem;
@@ -44,7 +44,7 @@
           padding: 0 10px;
           display: flex;
           overflow-y: scroll;
-          gap: 30px;
+          gap: 2rem;
         }
 
       }

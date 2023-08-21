@@ -1,10 +1,8 @@
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faShoppingBag } from "@fortawesome/free-solid-svg-icons";
 import classnames from "classnames/bind";
 import styles from "./Product.module.scss";
 
 import { ProductModel } from "../../models/Model";
-import { HeartIcon } from "../../assets/Icons";
+import { HeartIcon, ShoppingBagIcon } from "../../assets/Icons";
 
 const cx = classnames.bind(styles);
 
@@ -24,8 +22,8 @@ const Product = ({ product } : { product: ProductModel }) => {
                             {
                                 product && (
                                     <>
-                                        <img className={cx("image")} src={product.images[0].imgLink} alt="" />
-                                        <img className={cx("image", "hover-image")} src={product.images[1].imgLink} alt="" />
+                                        <img className={cx("image")} src={product.images[0]?.imgLink} alt="" />
+                                        <img className={cx("image", "hover-image")} src={product.images[1]?.imgLink} alt="" />
                                     </>
                                 )
 
@@ -62,8 +60,8 @@ const Product = ({ product } : { product: ProductModel }) => {
                         {/* produuct price */}
 
                         <div className={cx("product-price")}>
-                            <div className={cx("price")}>{product.salePrice}</div>
-                            <a href=""><FontAwesomeIcon icon={faShoppingBag}/></a>
+                            <div className={cx("price")}>{("" + product.salePrice).replace(/\B(?=(\d{3})+(?!\d))/g, ".")}</div>
+                            <a href=""><ShoppingBagIcon/></a>
                         </div>
                     </div>
             </div>

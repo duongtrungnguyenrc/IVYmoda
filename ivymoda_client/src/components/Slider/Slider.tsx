@@ -1,3 +1,4 @@
+import { memo } from "react";
 import "./Slider.scss";
 
 function Slider() {
@@ -38,4 +39,4 @@ function Slider() {
      );
 }
 
-export default Slider;
+export default memo(Slider);

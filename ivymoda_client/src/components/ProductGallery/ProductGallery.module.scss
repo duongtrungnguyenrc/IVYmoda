@@ -1,4 +1,4 @@
-@import "../../assets/globalStyle.scss";
+@import '../../assets/GeneralDefine.scss';
 
 .product-gallery {
     display: flex;
@@ -8,20 +8,10 @@
 
     .main-gallery-frame {
         width: 690px;
+        min-width: 83%;
         height: 66rem;
         overflow: hidden;
-
-        @include responsive(1700px) {
-            width: 600px;
-        }
-
-        @include responsive(1600px) {
-            width: 520px;
-        }
-
-        @include responsive(1500px) {
-            width: 500px;
-        }
+        cursor:cell;
         
         .main-gallery-image {
             width: 100%;
@@ -35,20 +25,9 @@
 
         height: 66rem;
         width: calc(100% - 690px);
+        min-width: 18%;
         flex-direction: column;
         padding-left: 15px;
-
-        @include responsive(1700px, 1600px) {
-            width: calc(100% - 600px);
-        }
-
-        @include responsive(1600px) {
-            width: calc(100% - 520px);
-        }
-
-        @include responsive(1500px) {
-            width: calc(100% - 500px);
-        }
 
         .slider-gallery {
             width: 100%;
